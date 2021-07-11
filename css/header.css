@@ -1,0 +1,147 @@
+header {
+    width: 100vw;
+    height: 8vh;
+    background: var(--black-gradient);
+    box-shadow: 0px 2px 20px 0px #428dff;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+header .logo {
+    border-radius: 50%;
+    position: absolute;
+    left: 1%;
+}
+header .profile {
+    height: 60%;
+    position: absolute;
+    right: 1%;
+    cursor: pointer;
+}
+header .search-bar {
+    position: absolute;
+    right: 5%;
+    border-radius: 15px;
+    padding: 0.2% 1%;
+}
+
+.navbar {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.navbar-list {
+    width: 42%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-item a {
+    color: azure;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    font-size: 1.2rem;
+    line-height: 3rem;
+}
+.navbar-item a:hover {
+    text-decoration: underline;
+    text-shadow: 0px 0px 10px #428dff;
+}
+
+#burger-checkbox {
+    display: none;
+}
+
+.burger-label {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+
+    header .logo {
+        left: 10%;
+    }
+    header .search-bar {
+        right: 10%;
+    }
+
+    .navbar-list {
+        width: 50%;
+        display: none;
+        left: 0;
+        transform: translate(0,0);
+    }
+
+    .navbar-item a {
+        font-size: 1.8rem;
+        margin: 1rem 0;
+    }
+
+    .burger-label {
+        width: 2rem;
+        height: 1.3rem;
+        position: absolute;
+        top: 2.6vh;
+        left: 1.5%;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .burger-label::before {
+        content: "";
+        width: 1.8rem;
+        height: .2rem;
+        background-color: #428dff;
+        position: absolute;
+        box-shadow: 0 0.5rem 0 0 #428dff, 0 1rem 0 0 #428dff;
+    }
+
+    #burger-checkbox:checked ~ .navbar-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: black;
+        opacity: .85;
+        margin-top: 4vh;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    header .logo {
+        left: 18%;
+    }
+    header .search-bar {
+        right: 18%;
+    }
+    header .profile {
+        right: 4%;
+    }
+
+    .burger-label {
+        left: 4%;
+    }
+
+    .navbar-list {
+        width: 100%;
+    }
+
+}
